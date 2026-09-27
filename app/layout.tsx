@@ -1,34 +1,35 @@
 import type { Metadata, Viewport } from "next";
-import { Anton, Jost } from "next/font/google";
+import localFont from "next/font/local";
 import MotionProvider from "@/components/MotionProvider";
 import SmoothScroll from "@/components/SmoothScroll";
 import { site } from "@/lib/site";
 import { siteUrl } from "@/lib/url";
 import "./globals.css";
 
-const anton = Anton({
-  variable: "--font-anton",
-  weight: "400",
-  subsets: ["latin"],
+const oswald = localFont({
+  src: "../assets/Oswald-Variable.ttf",
+  variable: "--font-oswald",
+  weight: "200 700",
   display: "swap",
 });
 
-const jost = Jost({
+const jost = localFont({
+  src: "../assets/Jost-Latin.woff2",
+  weight: "100 900",
   variable: "--font-jost",
-  subsets: ["latin"],
   display: "swap",
 });
 
 const description =
-  "Pizzeria d'asporto e domicilio a Enna. Forno a legna, lunga lievitazione, impasto classico, integrale o senza glutine e mozzarella senza lattosio. Aperti dalle 17 alle 23, martedì chiuso.";
+  "Gelato, granite, brioche e caffè alla Kalsa, Palermo. Scopri Antica Gelateria Donna Carmela in Via Alessandro Paternostro 20.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   alternates: { canonical: "/" },
-  title: "Pepe Nero · Pizzeria d'asporto e domicilio a Enna",
+  title: "Donna Carmela · Antica Gelateria alla Kalsa, Palermo",
   description,
   openGraph: {
-    title: "Pepe Nero · Pizzeria a Enna",
+    title: "Donna Carmela · Antica Gelateria",
     description,
     locale: "it_IT",
     type: "website",
@@ -36,18 +37,16 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#000000",
+  themeColor: "#242b1c",
 };
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "Restaurant",
+  "@type": "IceCreamShop",
   name: site.name,
-  legalName: site.legalName,
-  vatID: `IT${site.vat}`,
   url: siteUrl,
   image: `${siteUrl}/opengraph-image`,
-  servesCuisine: ["Pizza", "Italiana"],
+  servesCuisine: ["Gelato", "Siciliana"],
   telephone: site.phone.tel,
   address: {
     "@type": "PostalAddress",
@@ -59,17 +58,17 @@ const jsonLd = {
   openingHoursSpecification: [
     {
       "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Monday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-      opens: "17:00",
-      closes: "23:00",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      opens: "09:00",
+      closes: "01:30",
     },
   ],
-  sameAs: [site.social.instagram, site.social.facebook],
+  sameAs: [site.social.instagram],
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="it" className={`${anton.variable} ${jost.variable} antialiased`}>
+    <html lang="it" className={`${oswald.variable} ${jost.variable} antialiased`}>
       <body className="grain min-h-dvh overflow-x-clip">
         <script
           type="application/ld+json"
