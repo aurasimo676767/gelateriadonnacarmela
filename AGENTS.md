@@ -1,4 +1,14 @@
-# Gelateria Donna Carmela — note per Claude
+# Gelateria Donna Carmela — note condivise per gli assistenti
+
+## Collaborazione
+
+- Questo file è la fonte condivisa delle istruzioni; `CLAUDE.md` contiene solo `@AGENTS.md`.
+- Non modificare `../pepenero`.
+- Fare commit piccoli e frequenti con messaggi chiari in italiano.
+- Spuntare le voci completate e annotare qui le decisioni importanti su palette, menu e sezioni.
+- Dati e materiali della gelateria saranno forniti dall'utente; non inventarli.
+- Il collegamento a nuovi progetti GitHub e Vercel sarà fatto dall'utente.
+- Prima di dichiarare funzionante una modifica al sito, eseguire `npm run build` e verificare telefono (nessuno scorrimento laterale) e desktop.
 
 **Questo progetto è partito come copia del sito della Pizzeria Pepe Nero** (`../pepenero`). Struttura, stile e tecniche restano; contenuti e identità vanno rifatti per la Gelateria Donna Carmela. Tutto quello che sotto parla di Pepe Nero descrive il codice com'è adesso, non come deve diventare.
 
