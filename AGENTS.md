@@ -36,7 +36,7 @@ Dettagli in docs/contenuti.md.
 - Telefono unico 331 748 2568: cellulare della fonte, sostituisce la vecchia regola del fisso.
 - Nessun Facebook/delivery/recensione numerica senza dati.
 - Colori dai materiali dell'insegna: nero #242B1C, carbone #343B28, tortora #E7C49B, tortora-scuro #716044, bianco-tortora #EDEBD9, salvia #BAC78A, latte #FAF8EC.
-- L'utente ha rifiutato Georgia e autorizzato una variante molto simile ad Anton: ora Oswald Bold (700), locale in assets/Oswald-Variable.ttf, scaricato dall'utente. Jost locale per testo; Anton resta per anteprima social. Conservati maiuscole, proporzioni e altri ritocchi. Non cambiare nuovamente font senza richiesta.
+- L'utente ha rifiutato sia Georgia sia Oswald Bold: ripristinato Anton locale (400) per i titoli, senza grassetto sintetico. Jost locale per testo. Conservati maiuscole, proporzioni e altri ritocchi. Non cambiare nuovamente font senza richiesta.
 - Hero con marchio in evidenza e cornice ad arco; rimossa la targhetta circolare sulla foto. Marquee orizzontale incorniciata con titoli maiuscoli, al posto della fascia inclinata condivisa con Pepe Nero.
 - Hero lettere in sequenza e foto ad arco; prodotti illustrati in SVG con entrata a molla; storia e footer con parallasse. Nessuna dipendenza da hover per interazioni principali.
 
@@ -61,6 +61,7 @@ Next.js 16, React 19, TypeScript, Tailwind v4 (@theme in app/globals.css), Motio
 - Nav scrive data-nav su html. Barra categorie cambia top, mai translate.
 - Scroll categorie sottrae altezza barra e nav.
 - MaskTitle e lettere hero hanno padding verticale con margini negativi per non tagliare glifi.
+- Le maschere usano anche title-mask-gutter (padding e margine orizzontale compensati): necessario per non tagliare la A finale di Anton con tracking negativo. Applicato a hero, MaskTitle e navigazione mobile; non rimuoverlo.
 - MotionConfig reducedMotion="never": ingressi restano; parallasse/loop disattivati tramite useReduced o media query.
 - Google Maps si carica solo al tocco. Prima mostra illustrazione, non una mappa geografica reale.
 - Pulsanti a pillola, card con doppio bordo, grana, easing expo [0.16, 1, 0.3, 1].

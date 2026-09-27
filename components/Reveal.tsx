@@ -53,7 +53,7 @@ export function MaskTitle({
       viewport={{ once: true, margin: "0px 0px -10% 0px" }}
     >
       {words.map((w, i) => (
-        <span key={i} aria-hidden="true" className="-mt-[0.35em] -mb-[0.12em] inline-block overflow-hidden pt-[0.35em] pb-[0.12em] align-bottom">
+        <span key={i} aria-hidden="true" className="title-mask-gutter -mt-[0.35em] -mb-[0.12em] inline-block overflow-hidden pt-[0.35em] pb-[0.12em] align-bottom">
           <motion.span
             className="inline-block"
             variants={{

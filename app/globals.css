@@ -9,15 +9,11 @@
   --color-salvia: #bac78a;
   --color-latte: #faf8ec;
 
-  --font-display: var(--font-oswald);
+  --font-display: var(--font-anton);
   --font-sans: var(--font-jost);
 
   --ease-spring: cubic-bezier(0.32, 0.72, 0, 1);
   --ease-expo: cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.font-display {
-  font-weight: 700;
 }
 
 html {
@@ -145,6 +141,9 @@ textarea {
   }
 }
 
+/* Il glifo può superare il suo advance, soprattutto con tracking negativo.
+   Allargare la maschera senza cambiare la spaziatura tra lettere/parole. */
+.title-mask-gutter { padding-inline: .12em; margin-inline: -.12em; }
 .hero-name { font-size: clamp(3.5rem, 17.3vw, 7.6rem); line-height: .95; letter-spacing: -.045em; }
 .hero-frame { padding: .65rem; border: 1px solid color-mix(in srgb, var(--color-salvia) 35%, transparent); border-radius: 49% 49% 1.7rem 1.7rem; }
 .hero-arch { border-radius: 48% 48% 3% 3%; }

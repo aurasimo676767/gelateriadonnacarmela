@@ -2,13 +2,13 @@
 
 import { AnimatePresence, motion, useMotionValueEvent, useScroll } from "motion/react";
 import { useEffect, useState } from "react";
-import Mill from "./Mill";
+import Brand from "./Brand";
 import { site } from "@/lib/site";
 
 const links = [
-  { href: "#impasti", label: "Impasti" },
-  { href: "#menu", label: "Menu" },
-  { href: "#ordina", label: "Ordina" },
+  { href: "#storia", label: "La storia" },
+  { href: "#menu", label: "Al banco" },
+  { href: "#contatti", label: "Contatti" },
   { href: "#orari", label: "Orari e indirizzo" },
 ];
 
@@ -54,13 +54,13 @@ export default function Nav() {
           aria-label="Navigazione principale"
         >
           <a href="#top" className="flex items-center gap-2.5" onClick={() => setOpen(false)}>
-            <Mill className="h-7 w-auto text-latte" />
-            <span className="font-display text-xl tracking-wide">
-              PEPE <span className="mirror text-tortora">NERO</span>
+            <Brand className="size-9 shrink-0 text-salvia" />
+            <span className="font-display text-sm tracking-wide sm:text-xl">
+              DONNA CARMELA
             </span>
           </a>
 
-          <ul className="hidden items-center gap-7 text-[15px] text-latte/75 md:flex">
+          <ul className="hidden items-center gap-7 text-[15px] text-latte/75 lg:flex">
             {links.map((l) => (
               <li key={l.href}>
                 <a href={l.href} className="relative transition-colors duration-300 hover:text-latte">
@@ -73,9 +73,10 @@ export default function Nav() {
           <div className="flex items-center gap-2">
             <a
               href={`tel:${site.phone.tel}`}
-              className="group flex items-center gap-2 rounded-full bg-tortora py-1.5 pr-1.5 pl-4 text-[15px] font-medium text-nero transition-transform duration-500 ease-[var(--ease-spring)] active:scale-[0.97]"
+              className="group hidden items-center gap-2 rounded-full bg-tortora py-1.5 pr-1.5 pl-4 text-[15px] font-medium text-nero transition-transform duration-500 ease-[var(--ease-spring)] active:scale-[0.97] sm:flex"
             >
-              Chiama
+              <span className="hidden sm:inline">Chiama</span>
+              <span className="sr-only sm:hidden">Chiama la gelateria</span>
               <span className="grid size-8 place-items-center rounded-full bg-nero/10 transition-transform duration-500 ease-[var(--ease-spring)] group-hover:rotate-[-12deg] group-hover:scale-110">
                 <PhoneIcon />
               </span>
@@ -83,7 +84,7 @@ export default function Nav() {
             <button
               type="button"
               onClick={() => setOpen((o) => !o)}
-              className="relative grid size-11 place-items-center rounded-full bg-white/5 ring-1 ring-white/10 md:hidden"
+              className="relative grid size-11 place-items-center rounded-full bg-white/5 ring-1 ring-white/10 lg:hidden"
               aria-expanded={open}
               aria-controls="menu-mobile"
               aria-label={open ? "Chiudi menu" : "Apri menu"}
@@ -107,7 +108,7 @@ export default function Nav() {
         {open && (
           <motion.div
             id="menu-mobile"
-            className="fixed inset-0 z-30 flex flex-col justify-between bg-nero/85 px-6 pt-32 pb-10 backdrop-blur-2xl md:hidden"
+            className="fixed inset-0 z-30 flex flex-col justify-between bg-nero/95 px-6 pt-32 pb-10 backdrop-blur-2xl lg:hidden"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0, transition: { duration: 0.4, delay: 0.15 } }}
@@ -115,11 +116,11 @@ export default function Nav() {
           >
             <ul className="space-y-2">
               {links.map((l, i) => (
-                <li key={l.href} className="overflow-hidden">
+                <li key={l.href} className="title-mask-gutter overflow-hidden py-[.12em] -my-[.12em]">
                   <motion.a
                     href={l.href}
                     onClick={() => setOpen(false)}
-                    className="block font-display text-[13vw] leading-[1.05] uppercase"
+                    className="block font-display text-[clamp(2rem,10vw,5rem)] leading-[1.15]"
                     initial={{ y: "100%" }}
                     animate={{ y: 0 }}
                     exit={{ y: "100%", transition: { duration: 0.35, delay: i * 0.03 } }}
@@ -138,7 +139,7 @@ export default function Nav() {
               transition={{ duration: 0.8, ease, delay: 0.4 }}
             >
               <p>{site.address.street}, {site.address.city}</p>
-              <p>Tutti i giorni 17:00 – 23:00, martedì chiuso</p>
+              <p>{site.hoursLabel}</p>
             </motion.div>
           </motion.div>
         )}
