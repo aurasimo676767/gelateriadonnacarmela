@@ -18,7 +18,7 @@ export default function Footer() {
         <div className="flex flex-col items-start gap-3"><a href={site.social.instagram} target="_blank" rel="noopener noreferrer">Instagram ↗</a><a href={site.reviewUrl} target="_blank" rel="noopener noreferrer">Lascia una recensione ↗</a><a href="#top">Torna su ↑</a></div>
       </div>
       <div className="mt-16 overflow-hidden py-3"><motion.p style={{y}} aria-hidden="true" className="text-center font-display text-[clamp(2rem,12.2vw,10.8rem)] leading-none whitespace-nowrap text-salvia">DONNA CARMELA</motion.p></div>
-      <div className="mt-8 flex flex-wrap justify-between gap-4 border-t border-latte/15 pt-6 text-sm text-latte/60"><p>© {new Date().getFullYear()} {site.name}</p><Link href="/privacy" className="underline underline-offset-4">Privacy e cookie</Link><p>Fatto con cura da Simo</p></div>
+      <div className="mt-8 flex flex-wrap justify-between gap-4 border-t border-latte/15 pt-6 text-sm text-latte/60"><p>© {new Date().getFullYear()} {site.name}</p><Link href="/privacy" className="underline underline-offset-4">Privacy e cookie</Link><a href="https://wa.me/393770819118" target="_blank" rel="noopener noreferrer" className="underline underline-offset-4">Fatto con cura da Simo</a></div>
     </div>
   </footer>;
 }
