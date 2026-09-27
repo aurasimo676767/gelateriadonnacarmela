@@ -15,12 +15,12 @@ export default function Hero() {
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
   const y = useTransform(scrollYProgress, [0, 1], [0, reduce ? 0 : 90]);
   const rotate = useTransform(scrollYProgress, [0, 1], [0, reduce ? 0 : -3]);
-  return <section ref={ref} id="top" className="hero-shell relative overflow-hidden bg-nero px-5 pt-32 pb-20 md:px-10 md:pt-40 md:pb-28">
+  return <section ref={ref} id="top" className="hero-shell relative overflow-hidden bg-nero px-5 pt-28 pb-20 md:px-10 md:pt-40 md:pb-28">
     <div className="hero-watermark pointer-events-none absolute -top-28 -left-24 text-salvia/[0.04]" aria-hidden="true"><Brand className="size-[95vw] max-w-[1100px]" /></div>
     <div className="relative mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1.25fr_1fr] lg:items-center lg:gap-4">
       <div className="relative z-10">
-        <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .8 }} className="mb-8 flex items-center gap-4 text-sm text-latte/75 md:text-base">
-          <Brand className="size-16 text-salvia md:size-20" /> <p>Antica gelateria<br/><span className="text-latte/50">Nel cuore di Palermo</span></p>
+        <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .8 }} className="mb-6 flex items-center gap-3 text-sm text-latte/75 md:mb-8 md:gap-4 md:text-base">
+          <Brand className="size-10 shrink-0 text-salvia md:size-20" /> <p>Antica gelateria<br/><span className="text-latte/50">Nel cuore di Palermo</span></p>
         </motion.div>
         <h1 aria-label="Donna Carmela, antica gelateria alla Kalsa" className="hero-name font-display uppercase">
           {["Donna", "Carmela"].map((word, row) => <span key={word} aria-hidden="true" className="block whitespace-nowrap text-latte">

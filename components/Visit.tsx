@@ -14,7 +14,7 @@ export default function Visit() {
       <div className="mx-auto max-w-7xl">
         <MaskTitle
           text="Vienici a trovare"
-          className="font-display text-[clamp(3rem,8vw,6.5rem)] leading-[0.88] uppercase"
+          className="font-display uppercase text-[clamp(3rem,8vw,6.5rem)] leading-[0.88]"
         />
 
         <div className="mt-14 grid gap-12 md:mt-20 lg:grid-cols-[1.15fr_1fr] lg:gap-16">
@@ -47,10 +47,10 @@ export default function Visit() {
           </Reveal>
 
           <Reveal delay={0.15}>
-            <h3 className="font-display text-4xl uppercase">Orari di apertura</h3>
+            <h3 className="font-display uppercase text-4xl">Orari di apertura</h3>
             <p className="mt-3 flex items-center gap-2.5 text-carbone/75" aria-live="polite">
               <span className={`size-2.5 rounded-full ${status?.open ? "bg-emerald-500" : "bg-tortora-scuro"}`} />
-              {status?.label ?? "Tutti i giorni dalle 17:00 alle 23:00, martedì chiuso"}
+              {status?.label ?? site.hoursLabel}
             </p>
             <ul className="mt-8">
               {weekOrder.map((d, i) => {
@@ -86,15 +86,12 @@ export default function Visit() {
             </ul>
 
             <div className="mt-12">
-              <h3 className="font-display text-4xl uppercase">Seguici</h3>
+              <h3 className="font-display uppercase text-4xl">Seguici</h3>
               <div className="mt-5 flex flex-wrap gap-3">
-                <SocialLink href={site.social.instagram} label="Instagram" handle="@pepeneroenna">
+                <SocialLink href={site.social.instagram} label="Instagram" handle="@donnacarmela1890">
                   <path d="M12 7.5a4.5 4.5 0 1 0 0 9 4.5 4.5 0 0 0 0-9Z" />
                   <rect x="3" y="3" width="18" height="18" rx="5" />
                   <circle cx="17.3" cy="6.7" r=".6" fill="currentColor" />
-                </SocialLink>
-                <SocialLink href={site.social.facebook} label="Facebook" handle="Pepe Nero Enna">
-                  <path d="M14 8h2.5V4.5H14A3.5 3.5 0 0 0 10.5 8v2.5H8V14h2.5v6.5H14V14h2.5l.5-3.5h-3V8.5c0-.28.22-.5.5-.5Z" />
                 </SocialLink>
               </div>
             </div>

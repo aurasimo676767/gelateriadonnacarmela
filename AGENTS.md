@@ -38,6 +38,7 @@ Dettagli in docs/contenuti.md.
 - Colori dai materiali dell'insegna: nero #242B1C, carbone #343B28, tortora #E7C49B, tortora-scuro #716044, bianco-tortora #EDEBD9, salvia #BAC78A, latte #FAF8EC.
 - L'utente ha rifiutato sia Georgia sia Oswald Bold: ripristinato Anton locale (400) per i titoli, senza grassetto sintetico. Jost locale per testo. Conservati maiuscole, proporzioni e altri ritocchi. Non cambiare nuovamente font senza richiesta.
 - Hero con marchio in evidenza e cornice ad arco; rimossa la targhetta circolare sulla foto. Marquee orizzontale incorniciata con titoli maiuscoli, al posto della fascia inclinata condivisa con Pepe Nero.
+- Dopo lo screenshot iPhone: hero mobile compattata di 48px (padding superiore 112px, marchio 40px, margine sotto 24px). Dimensioni del nome e layout desktop conservati.
 - Hero lettere in sequenza e foto ad arco; prodotti illustrati in SVG con entrata a molla; storia e footer con parallasse. Nessuna dipendenza da hover per interazioni principali.
 
 ## Stack e file

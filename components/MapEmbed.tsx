@@ -2,7 +2,7 @@
 
 import { AnimatePresence, motion } from "motion/react";
 import { useState } from "react";
-import Mill from "./Mill";
+import Brand from "./Brand";
 import { site } from "@/lib/site";
 
 export default function MapEmbed() {
@@ -14,7 +14,7 @@ export default function MapEmbed() {
         {!show && (
           <motion.div
             key="placeholder"
-            className="absolute inset-0 grid place-items-center bg-[#ddd5ca]"
+            className="absolute inset-0 grid place-items-center bg-bianco-tortora"
             exit={{ opacity: 0, scale: 1.04, transition: { duration: 0.5 } }}
           >
             <MapSketch />
@@ -22,7 +22,7 @@ export default function MapEmbed() {
             <div className="absolute top-[42%] left-1/2 -translate-x-1/2 -translate-y-full">
               <span className="pulse-ring absolute top-full left-1/2 -mt-1.5 -ml-3 size-6 rounded-full bg-carbone/30" />
               <div className="relative grid size-14 place-items-center rounded-full bg-carbone shadow-[0_12px_24px_-10px_rgba(0,0,0,0.6)]">
-                <Mill className="h-8 w-auto text-latte" />
+                <Brand className="size-9 text-latte" />
               </div>
               <div className="mx-auto -mt-1 h-3 w-3 rotate-45 bg-carbone" />
             </div>

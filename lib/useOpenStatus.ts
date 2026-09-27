@@ -27,11 +27,17 @@ function romeNow() {
   return { day, minutes: Number(get("hour")) * 60 + Number(get("minute")) };
 }
 
-export function computeStatus(): OpenStatus {
-  const { day, minutes } = romeNow();
+export function computeStatus(now = romeNow()): OpenStatus {
+  const { day, minutes } = now;
   const today = site.hours[day];
+  const yesterday = site.hours[(day + 6) % 7];
 
-  if (today && minutes >= toMinutes(today.open) && minutes < toMinutes(today.close)) {
+  // Un turno che termina dopo mezzanotte appartiene al giorno precedente.
+  if (yesterday && toMinutes(yesterday.close) <= toMinutes(yesterday.open) && minutes < toMinutes(yesterday.close)) {
+    return { open: true, today: day, label: `Aperto ora, fino alle ${yesterday.close}` };
+  }
+
+  if (today && minutes >= toMinutes(today.open) && (toMinutes(today.close) <= toMinutes(today.open) || minutes < toMinutes(today.close))) {
     return { open: true, today: day, label: `Aperto ora, fino alle ${today.close}` };
   }
   if (today && minutes < toMinutes(today.open)) {

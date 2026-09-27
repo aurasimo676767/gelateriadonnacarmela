@@ -6,10 +6,10 @@ import { site } from "@/lib/site";
 import { siteUrl } from "@/lib/url";
 import "./globals.css";
 
-const oswald = localFont({
-  src: "../assets/Oswald-Variable.ttf",
-  variable: "--font-oswald",
-  weight: "200 700",
+const anton = localFont({
+  src: "../assets/Anton-Regular.ttf",
+  variable: "--font-anton",
+  weight: "400",
   display: "swap",
 });
 
@@ -68,7 +68,7 @@ const jsonLd = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="it" className={`${oswald.variable} ${jost.variable} antialiased`}>
+    <html lang="it" className={`${anton.variable} ${jost.variable} antialiased`}>
       <body className="grain min-h-dvh overflow-x-clip">
         <script
           type="application/ld+json"
