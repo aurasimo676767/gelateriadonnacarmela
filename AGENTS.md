@@ -72,6 +72,6 @@ Next.js 16, React 19, TypeScript, Tailwind v4 (@theme in app/globals.css), Motio
 
 Compilazione Next riuscita, build interrotta al worker TypeScript con spawn EPERM. TypeScript diretto e npm run lint passati. Verificati gli orari a mezzanotte, 01:29, 01:30, 08:59, 09:00 e 23:59, incluso cambio settimana. Server dev e browser automatizzato bloccati dallo stesso ambiente: verifica visuale ancora da fare. Non dichiarare completati questi controlli.
 
-Commit delle modifiche non eseguiti: git add/commit negati con Permission denied su .git/index.lock. Le modifiche sono salvate nel working tree. Riprendere i commit quando la sessione avrà accesso a .git.
+Migrazione committata in locale (548a390). Nessun remote configurato: il push su GitHub e il collegamento a Vercel li fa l'utente.
 
 Comandi: npm run dev -- --hostname 0.0.0.0; npm run build; npm run lint; npx tsc --noEmit.
