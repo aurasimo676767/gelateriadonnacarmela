@@ -10,6 +10,15 @@
 - Il collegamento a nuovi progetti GitHub e Vercel sarà fatto dall'utente.
 - Prima di dichiarare funzionante una modifica al sito, eseguire `npm run build` e verificare telefono (nessuno scorrimento laterale) e desktop.
 
+## Materiali e direzione concordata
+
+- Instagram fornito dall'utente: https://www.instagram.com/donnacarmela1890/
+- Google Maps fornito dall'utente: https://share.google/cssYXcujYlYb1LLyn
+- Fonte indicata dall'utente per recuperare informazioni e logo: https://donna-carmela.devra.net (non ancora recuperata: accesso web fallito nella sessione del 27 settembre 2026).
+- Conservare struttura, stile e tecniche della base; creare l'identità della gelateria con particolare cura per animazioni e interazioni su telefono.
+- Lavorare in locale e rendere l'anteprima accessibile via IP sulla stessa rete del telefono. Nessuna pubblicazione esterna.
+- Non interpretare `1890` nell'handle Instagram come anno di fondazione senza conferma.
+
 **Questo progetto è partito come copia del sito della Pizzeria Pepe Nero** (`../pepenero`). Struttura, stile e tecniche restano; contenuti e identità vanno rifatti per la Gelateria Donna Carmela. Tutto quello che sotto parla di Pepe Nero descrive il codice com'è adesso, non come deve diventare.
 
 ## Da sostituire (ancora di Pepe Nero)
