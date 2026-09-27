@@ -1,0 +1,179 @@
+@import "tailwindcss";
+
+@theme {
+  --color-nero: #000000;
+  --color-carbone: #2f2e2d;
+  --color-tortora: #b6a594;
+  --color-tortora-scuro: #6f6255;
+  --color-bianco-tortora: #e8e1d7;
+  --color-salvia: #cbc7bb;
+  --color-latte: #f7f5f1;
+
+  --font-display: var(--font-anton);
+  --font-sans: var(--font-jost);
+
+  --ease-spring: cubic-bezier(0.32, 0.72, 0, 1);
+  --ease-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+html {
+  scroll-behavior: auto;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+  overflow-x: clip;
+  overscroll-behavior-x: none;
+}
+@supports not (overflow: clip) {
+  html,
+  body {
+    overflow-x: hidden;
+  }
+}
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+body {
+  background: var(--color-nero);
+  color: var(--color-latte);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-feature-settings: "kern", "liga";
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+}
+input,
+textarea {
+  -webkit-user-select: text;
+  user-select: text;
+}
+
+::selection {
+  background: var(--color-tortora);
+  color: var(--color-nero);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-tortora);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+.grain::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 60;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.mirror {
+  display: inline-block;
+  transform: scaleX(-1);
+}
+
+@keyframes marquee {
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+.marquee-track {
+  animation: marquee var(--marquee-speed, 38s) linear infinite;
+}
+.marquee-reverse .marquee-track {
+  animation-direction: reverse;
+}
+
+@keyframes mill-twist {
+  0%, 26%, 100% { transform: scaleX(1) rotate(0deg); }
+  6% { transform: scaleX(0.68) rotate(-9deg); }
+  12% { transform: scaleX(1) rotate(0deg); }
+  19% { transform: scaleX(0.72) rotate(8deg); }
+}
+.mill-grind .mill-head {
+  transform-box: fill-box;
+  transform-origin: 50% 100%;
+  animation: mill-twist 3.2s cubic-bezier(0.45, 0, 0.55, 1) 2.4s infinite;
+}
+
+@keyframes grind {
+  0%, 8% {
+    transform: translate3d(0, 0, 0) rotate(0deg) scale(0.4);
+    opacity: 0;
+  }
+  12% {
+    transform: translate3d(calc(var(--dx) * 0.15), 5px, 0) rotate(calc(var(--rot) * 0.1)) scale(1);
+    opacity: 1;
+  }
+  38% {
+    transform: translate3d(var(--dx), 34px, 0) rotate(var(--rot)) scale(0.85);
+    opacity: 0.85;
+  }
+  44%, 100% {
+    transform: translate3d(var(--dx), 42px, 0) rotate(var(--rot)) scale(0.8);
+    opacity: 0;
+  }
+}
+.pepper-grain {
+  animation: grind 3.2s cubic-bezier(0.5, 0, 0.9, 0.6) infinite;
+  animation-delay: var(--delay, 0s);
+}
+
+@keyframes pulse-dot {
+  0% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(2.6);
+    opacity: 0;
+  }
+}
+.pulse-ring {
+  animation: pulse-dot 1.8s var(--ease-expo) infinite;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  scrollbar-width: none;
+}
+
+@keyframes heartbeat {
+  0%, 60%, 100% { transform: scale(1); }
+  15% { transform: scale(1.25); }
+  30% { transform: scale(0.95); }
+  45% { transform: scale(1.15); }
+}
+.heartbeat {
+  animation: heartbeat 1.6s ease-in-out infinite;
+  transform-origin: center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mill-grind .mill-head,
+  .heartbeat,
+  .marquee-track,
+  .pepper-grain,
+  .pulse-ring {
+    animation: none;
+  }
+}
