@@ -75,3 +75,7 @@ Compilazione Next riuscita, build interrotta al worker TypeScript con spawn EPER
 Migrazione committata in locale (548a390). Nessun remote configurato: il push su GitHub e il collegamento a Vercel li fa l'utente.
 
 Comandi: npm run dev -- --hostname 0.0.0.0; npm run build; npm run lint; npx tsc --noEmit.
+
+## Sospensione
+
+- proxy.ts blocca tutto il sito con una pagina 503 "Sito temporaneamente non disponibile" (mancato pagamento). Nessun file rimosso. Per riattivare: SITO_SOSPESO = false in proxy.ts.
